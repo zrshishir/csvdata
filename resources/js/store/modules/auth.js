@@ -1,7 +1,10 @@
 import { router } from '../../app'
+import axios from 'axios'
 
 const state = {
-    token: false
+    token: false,
+    allData:[],
+    returnMsg:''
 }
 
 const getters = {
@@ -22,6 +25,30 @@ const getters = {
                 { icon: 'lock_open', title: 'Sign in', link: '/signin'},
             ])
         }
+    },
+    dessrts: (state) => {
+        axios.get('http::/csvdata.test/api/getData')
+            .then(function (response) {
+               state.allData = response
+            })
+            .catch(function (error) {
+                
+            })
+            .then(function () {
+               
+            });
+    },
+    csv_fileFun: (state, file)=>{
+        axios.post('http::/csvdata.test/api/csvdata', {
+            csv_file: file,
+            lastName: 'Flintstone'
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 }
 

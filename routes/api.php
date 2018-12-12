@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('shishir', 'Csvdata\CsvdataController@index');
+Route::get('getData', 'Csvdata\CsvdataController@index');
 Route::post('csvdata', 'Csvdata\CsvdataController@store');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
