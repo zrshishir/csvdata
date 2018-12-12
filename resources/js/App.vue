@@ -20,7 +20,7 @@
         <v-icon v-html="sideNav ? 'chevron_left' : 'chevron_right'"></v-icon>
       </v-btn>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor:pointer">My Vuetify App</router-link>
+        <router-link to="/" tag="span" style="cursor:pointer">CSV Data Importing</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down floating">
